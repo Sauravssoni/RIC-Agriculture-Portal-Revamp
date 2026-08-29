@@ -1,27 +1,31 @@
-<p align="center">
-  <strong>RAJASTHAN INNOVATION CHALLENGE 2026 · AGRICULTURE</strong>
-</p>
+<p align="center"><strong>RAJASTHAN INNOVATION CHALLENGE 2026 · AGRICULTURE</strong></p>
 
 # RajKisan One — Rajasthan Agriculture Digital Front Door
 
 <p align="center"><strong>MVP PROTOTYPE · EVALUATOR BUILD · NOT A PRODUCTION GOVERNMENT SERVICE</strong></p>
-
 <p align="center"><strong>One farmer. One front door. Every agriculture service.</strong></p>
+
+<p align="center">
+<a href="https://ric-agriculture-portal-revamp.vercel.app/"><strong>▶ OPEN LIVE MVP</strong></a> ·
+<a href="docs/EVALUATOR_RUNBOOK.md">90-SECOND DEMO</a> ·
+<a href="submission/STRICT_JUDGE_REVIEW.md">STRICT JUDGE</a> ·
+<a href="docs/REQUIREMENTS_TRACEABILITY.md">CHALLENGE TRACEABILITY</a>
+</p>
 
 **Challenge:** Revamp of Department of Agriculture Web Portal — Citizen-Centric Digital Front-End  
 **Applicant:** Syntheon Tech Private Limited  
-**MVP Prototype:** zero-dependency citizen PWA + deterministic evaluator APIs  
+**Live MVP:** https://ric-agriculture-portal-revamp.vercel.app/  
 **Repository:** https://github.com/Sauravssoni/RIC-Agriculture-Portal-Revamp  
-**Deployment target:** Vercel project `ric-agriculture-portal-revamp`  
-**Design principle:** modernise the experience, preserve Government source authority
+**Version:** `0.9.0-mvp`  
+**Design principle:** modernise the citizen experience; preserve Government source authority.
 
-RajKisan One is not another agriculture database and not a cosmetic website redesign. It is a **citizen-experience, orchestration and observability layer** that makes Rajasthan's existing agriculture systems feel like one coherent service to a farmer while giving the Department measurable control over completion, friction, accessibility, content freshness and interoperability.
-
-<p align="center"><img src="screenshots-v4/home.webp" alt="RajKisan One citizen home" width="100%" /></p>
+<p align="center"><img src="docs/assets/front-door.svg" alt="RajKisan One citizen digital front door" width="100%" /></p>
 
 ## The thesis
 
-Rajasthan already has an **award-winning RajKisan Saathi transaction backbone** plus RajSSO, Jan Aadhaar, Raj Sewa Dwaar, Jan Soochna, RajDharaa, e-Dharti/Apna Khata, e-Mitra, public agriculture feeds and the emerging AgriStack/UFSI ecosystem. The challenge is the **Department's public front door**: discovery, continuity, explanation, document readiness, status visibility, feedback and operational analytics. RajKisan One is therefore designed to expose and compose existing Government investment, not compete with it.
+Rajasthan already owns powerful digital agriculture rails: **RajKisan Saathi, RajSSO, Jan Aadhaar, Raj Sewa Dwaar, Raj eVault, RajDharaa, Jan Soochna, e-Dharti, e-Mitra and emerging AgriStack/UFSI infrastructure**. The missing opportunity is a coherent public front door for discovery, explanation, continuity, document readiness, status visibility, feedback and service-quality operations.
+
+> **RajKisan One is not another agriculture database or another RajKisan. It is the citizen-experience, orchestration and observability layer over systems Rajasthan already owns.**
 
 ```text
 EXISTING GOVERNMENT SYSTEMS
@@ -34,70 +38,90 @@ ONE COHERENT SERVICE JOURNEY
 AUTHORITATIVE HANDOFF / STATUS / RECEIPT
 ```
 
-## Evaluator entry points
+## What makes this more than a standard portal revamp
 
-Run:
+### Citizen Service Contract
+Every priority scheme/service is designed as an executable public contract rather than a static page:
+- official owner and current availability;
+- source/version/effective-date metadata;
+- deterministic non-statutory pre-check;
+- required evidence and reuse-first document plan;
+- next citizen action and authoritative handoff;
+- assisted-channel continuity;
+- escalation path;
+- content freshness / Hindi parity / archival state.
 
-```bash
-python3 -m http.server 3000
+<p align="center"><img src="docs/assets/service-contract.svg" alt="RajKisan One Citizen Service Contract" width="100%" /></p>
+
+### Personal Action Centre
+After sandbox sign-in, the farmer sees **what needs attention now**: pending verification, missing document, approaching deadline, new status and relevant services. A citizen should not need to remember which portal to revisit.
+
+### Cross-channel continuity
+The MVP creates a privacy-safe **resume receipt** so the same journey can conceptually move across self-service web/PWA → e-Mitra → extension worker → authorised SUTRA field workflow without exposing raw identity numbers.
+
+### Department service operations
+Analytics is not vanity BI. It closes a loop:
+
+```text
+OBSERVE → DIAGNOSE → ASSIGN OWNER + SLA → FIX → VERIFY IMPROVEMENT → AUDIT
 ```
 
-Open `http://localhost:3000/#home` and click **Evaluator Demo**.
+<p align="center"><img src="docs/assets/command-centre.svg" alt="Department citizen experience command centre" width="100%" /></p>
 
-| Surface | Route | Proof |
+## Evaluator entry points
+
+| Surface | Route | Visible proof |
 |---|---|---|
-| Citizen front door | `#home` | task-first mobile experience, search, Hindi/English, personalised context |
-| Services | `#services` | structured catalogue + explainable deterministic eligibility |
-| My Agriculture | `#farm` | application timeline, document readiness, farm/service context |
-| GIS & Service Access | `#map` | Rajasthan service map pattern + district experience intelligence |
-| Department Insights | `#analytics` | task funnel, friction, feedback, search, content and GIGW health |
-| DPI Integrations | `#integrations` | explicit truth/authority state for every connector |
-| CMS & GIGW | `#cms` | content lifecycle + phased WebMyWay migration |
-| SUTRA Field | `#edge` | optional voice/evidence channel for low-connectivity assisted access |
+| Citizen front door | `#home` | mobile-first task navigation, bilingual UX, Action Centre, sandbox SSO |
+| Services | `#services` | structured catalogue + Citizen Service Contract + explainable rule pre-check |
+| My Agriculture | `#farm` | application timeline, document readiness, My Service Inbox, resume receipt |
+| GIS & Service Access | `#map` | Rajasthan service-access pattern + synthetic district service health |
+| Department Insights | `#analytics` | funnel, friction, search, feedback, content/GIGW and integration operations |
+| DPI Integrations | `#integrations` | connector truth/authority states |
+| CMS & GIGW | `#cms` | lifecycle governance + Scheme Rule Studio + phased migration |
+| SUTRA Field | `#edge` | optional low-connectivity voice/evidence channel using the same service contract |
 
-<p align="center"><img src="screenshots-v4/services.webp" alt="Citizen Service Contract" width="100%" /></p>
+Click **Evaluator Demo** in the live MVP for a guided proof sequence.
 
-<p align="center"><img src="screenshots-v4/analytics.webp" alt="Department Insights command centre" width="100%" /></p>
-
-## MVP status and what is actually implemented
-
-This repository intentionally remains labelled **MVP PROTOTYPE** even where the UI is polished to Government-grade standards. That preserves a clear boundary between an evaluator-ready demonstrator and a Department-configured production service, leaving room for official content, design-system, workflow, security, hosting and integration customisation after a joint pilot.
+## MVP implementation proof
 
 ### Citizen experience
-- responsive desktop/mobile government-style interface;
-- English/Hindi UI switching;
-- accessibility controls, skip link, keyboard-compatible controls and reduced-motion support;
-- task-first service cards instead of deep departmental navigation;
-- personalised demo workspace + proactive **Action Centre** for deadlines, missing documents and pending status actions;
-- functional RajSSO/Jan Aadhaar sandbox sign-in with purpose notice and no real credential collection;
+- responsive Government-style desktop/mobile UI;
+- Hindi/English switching;
+- text size, contrast, skip link, keyboard-compatible controls and reduced-motion support;
 - PWA manifest + offline shell service worker;
-- splash/loading states, animated KPI bars, interactive map, toasts and guided evaluator sequence.
+- task-first universal service discovery;
+- functional RajSSO/Jan Aadhaar **sandbox** modal with purpose notice and no real credential collection;
+- proactive Action Centre and citizen feedback receipt.
 
 ### Service intelligence
-- structured scheme/service catalogue with a clickable **Citizen Service Contract** for source/version, evidence, next step, authority, channel continuity and escalation;
-- deterministic eligibility pre-check with rule-version/decision receipt;
-- non-statutory authority boundary visible in the result;
-- Krishi Saathi routes the citizen to rules/tools rather than inventing eligibility;
-- citizen-readable application status timeline;
-- verified-document reuse UX with upload as fallback;
-- functional secure-document demo: PDF/JPG/PNG allowlist, 5 MB limit and browser-side SHA-256 with no file transmission in evaluator mode;
-- My Service Inbox for cross-channel continuity and a functional privacy-safe **resume receipt** for e-Mitra / extension-worker / authorised field continuation.
+- structured service catalogue;
+- clickable Citizen Service Contract;
+- deterministic eligibility endpoint + rule version + decision receipt;
+- explicit non-statutory boundary;
+- grounded Krishi Saathi interaction pattern;
+- citizen-readable application timeline;
+- verified-document reuse UX;
+- secure local-file demo: PDF/JPG/PNG allowlist, 5 MB limit, browser-side SHA-256, no upload in evaluator mode;
+- privacy-safe cross-channel resume receipt.
 
 ### Department operations
-- citizen journey funnel;
-- largest-friction signal;
-- search intelligence and zero-result correction;
-- feedback reason radar;
-- content freshness/supersession/broken-link health;
-- accessibility/GIGW readiness;
-- integration health and truth states;
-- service-quality action queue turning friction signals into owner + due-date operations;
-- privacy-safe evaluator session telemetry and cross-channel resume KPI;
-- map-linked district service context.
+- State Digital Service Command Centre;
+- task funnel and completion trends;
+- largest-friction intervention card;
+- zero-result/search intelligence;
+- feedback radar;
+- content freshness, supersession and broken-link health;
+- GIGW/accessibility readiness;
+- integration health pulse;
+- service-quality action queue with **signal → evidence → owner → due date → action**;
+- map-linked district context.
 
-### Evaluator API contracts
-When deployed on Vercel, deterministic sandbox functions are available:
+<p align="center"><img src="docs/assets/gis-service-map.svg" alt="RajDharaa-aligned GIS and service access concept" width="100%" /></p>
 
+## Evaluator API contracts
+
+Deployed deterministic sandbox functions:
 - `GET /api/health`
 - `POST /api/eligibility`
 - `POST /api/feedback`
@@ -105,71 +129,73 @@ When deployed on Vercel, deterministic sandbox functions are available:
 - `GET /api/action-centre`
 - `GET /api/service-search?q=tarbandi`
 
-They never claim privileged Government credentials and never persist real citizen data.
+`/api/health` deliberately returns `authoritative_government_connection:false` in evaluator mode. No production Government credentials or citizen PII are stored in this repository.
 
-## Government infrastructure strategy
+## Rajasthan DPI strategy
 
-| Rail | RajKisan One role | Authority stays with |
+| Rail | RajKisan One role | Authority remains with |
 |---|---|---|
-| RajKisan | service transaction/status/deep-link adapter | RajKisan |
-| RajSSO | citizen and official authentication | DoIT&C |
-| Jan Aadhaar 2.0 | consented minimum-necessary identity/profile attributes | Jan Aadhaar |
-| Raj Sewa Dwaar | Rajasthan API/ESB integration plane | DoIT&C/RISL |
-| Raj eVault/DigiLocker | verified-document reuse | issuing/document system |
-| Jan Soochna | scheme information/eligibility/penetration interoperability | source department |
-| RajDharaa | official geography and spatial service layers | RajDharaa/source departments |
-| e-Dharti/Apna Khata | approved land/girdawari context | Revenue authority |
-| AgriStack/UFSI | future farmer/farmland interoperability | state/central registry authority |
+| RajKisan | transaction/status/deep-link adapter | RajKisan |
+| RajSSO | citizen/official authentication | DoIT&C |
+| Jan Aadhaar 2.0 | consented minimum-necessary profile attributes | Jan Aadhaar |
+| Raj Sewa Dwaar | Rajasthan integration/API plane | DoIT&C/RISL |
+| Raj eVault / DigiLocker | verified-document reuse | issuer/document authority |
+| Jan Soochna | scheme transparency interoperability | source department |
+| RajDharaa | official geography/spatial layers | RajDharaa/source departments |
+| e-Dharti / Apna Khata | approved land context | Revenue authority |
+| AgriStack / UFSI | future farmer/farmland service interoperability | registry authorities |
 | BHASHINI | ASR/NMT/TTS accessibility | language provider only |
-| IMD / AGMARKNET | freshness-labelled advisory/market context | source agencies |
-| e-Mitra / Sampark | assisted service and grievance paths | respective authorities |
+| IMD / AGMARKNET | freshness-labelled context | source agencies |
+| e-Mitra / Sampark | assisted access / escalation | respective authorities |
 
 ## Responsible AI boundary
 
 > **Rules evaluate. AI explains. Government workflows decide.**
 
-AI may retrieve, translate, summarize, classify intent and explain a deterministic result. It may not modify Government facts, silently widen consent, or approve/deny a statutory benefit.
+AI can retrieve official content, translate, summarize, classify intent and explain a deterministic result. It cannot invent scheme policy, silently widen consent, mutate Government facts, or approve/deny statutory benefits.
 
 ## Selective reuse of proven Syntheon capability
 
-**SUTRA-ID Edge** is an optional assisted channel, not a portal dependency. It contributes the pattern `voice/evidence → AI candidate → human confirmation → signed handoff` for low-connectivity field work.  
-**FarmGraph Rakshak** contributes map-first operations, offline/PWA and integration-truth patterns; disease AI is not used for statutory eligibility.  
+**SUTRA-ID Edge** contributes an optional trust pattern for low-connectivity field access: `voice/evidence → AI candidate → human confirmation → signed handoff`. It is not a portal dependency.  
+**FarmGraph Rakshak** contributes map-first operations, offline/PWA and connector-truth engineering patterns; crop AI never becomes entitlement authority.  
 **RAJ-AGRISETU X** contributes consent/provenance and AgriStack/UFSI adapter discipline.
 
-<p align="center"><img src="screenshots-v4/map.webp" alt="RajDharaa-aligned GIS service access concept" width="100%" /></p>
+## 90-day joint pilot
 
-## 90-day implementation envelope
+The proposal defines an **indicative ₹48.00 lakh production-core pilot**, not a fantasy statewide rewrite:
+1. baseline, content/system ownership and security plan;
+2. mobile PWA + structured service catalogue + CMS adapter;
+3. deterministic rule registry, document readiness and status orchestration;
+4. approved Rajasthan DPI connector onboarding;
+5. Krishi Saathi/BHASHINI, GIS and assisted-channel validation;
+6. Department operations command centre;
+7. security/VAPT, accessibility/GIGW evidence, UAT, training and statewide scale blueprint.
 
-The proposal defines an **indicative ₹48.00 lakh production-core pilot** with seven gates: baseline/governance, citizen foundation, service orchestration, approved Rajasthan DPI adapters, intelligence/access, Department operations, hardening/UAT and go-live blueprint. Statewide rollout is deliberately not overclaimed.
+See [`docs/90_DAY_PILOT.md`](docs/90_DAY_PILOT.md), [`docs/JOINT_PILOT_ACCEPTANCE_SCORECARD.md`](docs/JOINT_PILOT_ACCEPTANCE_SCORECARD.md) and [`docs/FUTURE_VISION_BUSINESS_MODEL.md`](docs/FUTURE_VISION_BUSINESS_MODEL.md).
 
-## Documentation
+## Documentation & evidence room
 
 - [`docs/RESEARCH_EVIDENCE.md`](docs/RESEARCH_EVIDENCE.md)
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
-- [`docs/INTEGRATION_TRUTH_MATRIX.md`](docs/INTEGRATION_TRUTH_MATRIX.md)
-- [`docs/SECURITY_GOVERNANCE.md`](docs/SECURITY_GOVERNANCE.md)
-- [`docs/90_DAY_PILOT.md`](docs/90_DAY_PILOT.md)
-- [`docs/BUDGET_AND_RESOURCING.md`](docs/BUDGET_AND_RESOURCING.md)
-- [`docs/CLAIMS_AND_PROOF.md`](docs/CLAIMS_AND_PROOF.md)
-- [`docs/EVALUATOR_RUNBOOK.md`](docs/EVALUATOR_RUNBOOK.md)
 - [`docs/RAJKISAN_CONTINUITY_STRATEGY.md`](docs/RAJKISAN_CONTINUITY_STRATEGY.md)
 - [`docs/EVALUATOR_DIFFERENTIATION.md`](docs/EVALUATOR_DIFFERENTIATION.md)
 - [`docs/REQUIREMENTS_TRACEABILITY.md`](docs/REQUIREMENTS_TRACEABILITY.md)
+- [`docs/INTEGRATION_TRUTH_MATRIX.md`](docs/INTEGRATION_TRUTH_MATRIX.md)
+- [`docs/SECURITY_GOVERNANCE.md`](docs/SECURITY_GOVERNANCE.md)
 - [`docs/SERVICE_OBSERVABILITY_MODEL.md`](docs/SERVICE_OBSERVABILITY_MODEL.md)
-- [`docs/FUTURE_VISION_BUSINESS_MODEL.md`](docs/FUTURE_VISION_BUSINESS_MODEL.md)
-- [`docs/JOINT_PILOT_ACCEPTANCE_SCORECARD.md`](docs/JOINT_PILOT_ACCEPTANCE_SCORECARD.md)
-- [`submission/STRICT_JUDGE_REVIEW.md`](submission/STRICT_JUDGE_REVIEW.md)
+- [`docs/CLAIMS_AND_PROOF.md`](docs/CLAIMS_AND_PROOF.md)
+- [`docs/BUDGET_AND_RESOURCING.md`](docs/BUDGET_AND_RESOURCING.md)
+- [`docs/EVALUATOR_RUNBOOK.md`](docs/EVALUATOR_RUNBOOK.md)
 - [`docs/FORM_ANSWERS_FINAL.md`](docs/FORM_ANSWERS_FINAL.md)
+- [`submission/STRICT_JUDGE_REVIEW.md`](submission/STRICT_JUDGE_REVIEW.md)
 - [`submission/FINAL_RELEASE_GATE.md`](submission/FINAL_RELEASE_GATE.md)
 
-## Quality gates
+## Quality gate
 
 ```bash
 npm run release-check
 ```
 
-Final browser QA includes desktop and 390px-mobile render review of the citizen home plus visual review of My Agriculture, GIS and Department Insights.
-
 ## MVP prototype integrity
 
-All citizen identities, application numbers, district completion rates, funnel metrics, content-health metrics and service outcomes shown in the evaluator UI are **synthetic demonstration data** unless explicitly labelled as a dated official aggregate. The map is a stylised Rajasthan proof surface, not authoritative geometry. Production use requires Department-approved content and API onboarding, current official geography, credential/security review, VAPT/UAT, GIGW/STQC process as applicable, and approved hosting.
+All farmer identities, applications, district completion rates, funnel metrics, content-health metrics and service outcomes shown in the evaluator UI are **synthetic demonstration data** unless explicitly labelled otherwise. The GIS view is illustrative, not authoritative geometry. Production use requires Department-approved content/API onboarding, official geography, credential/security review, VAPT/UAT and applicable GIGW/STQC/government-hosting approvals.
