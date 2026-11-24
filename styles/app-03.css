@@ -44,3 +44,42 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 @media(max-width:960px){.rk2-hero .hero-inner{grid-template-columns:1fr}.rk2-resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.rk2-hero .hero-inner{padding:20px;gap:18px}.rk2-hero .hero-search{padding:5px}.rk2-hero .hero-search input{font-size:14px;padding:10px 8px}.rk2-hero .hero-btn{padding:9px}.rk2-resource-grid{grid-template-columns:1fr}.quick-card{min-height:108px;padding:12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* 2.0 citizen and department workspaces. */
+.rk2-officer-nav{position:relative;align-self:stretch;display:flex;color:white;margin-left:12px}
+.rk2-officer-nav summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:14px 12px;font-size:13px;font-weight:650}
+.rk2-officer-nav summary::-webkit-details-marker{display:none}
+.rk2-officer-nav[data-active] summary,.rk2-officer-nav[open] summary{background:#ffffff19}
+.rk2-officer-links{position:absolute;top:100%;left:0;min-width:235px;background:var(--gov2);box-shadow:0 12px 28px #001e4138;border-radius:0 0 10px 10px;padding:5px;z-index:905}
+.rk2-officer-links .navbtn{width:100%;min-height:44px;text-align:left}
+.rk2-officer-links .navbtn span{display:inline}
+.mainnav-inner{overflow:visible;flex-wrap:wrap}
+.rk2-catalogue-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;font-size:13px;color:var(--muted)}
+.rk2-card-view{background:transparent;border:0;box-shadow:none}
+.rk2-card-view .table-wrap{overflow:visible}
+.rk2-card-view table,.rk2-card-view tbody{display:block;width:100%}
+.rk2-card-view thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.rk2-card-view tbody{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rk2-card-view tr{display:flex;flex-direction:column;min-width:0;background:var(--card);padding:17px;border:1px solid var(--line);border-radius:16px;box-shadow:0 5px 16px #132d4010}
+.rk2-card-view td{display:block;border:0;padding:5px 0;font-size:13px}
+.rk2-card-view td:first-child b{font-size:17px;color:var(--ink)}
+.rk2-card-view td:nth-child(2){color:var(--muted)}
+.rk2-card-view td:nth-child(5){color:var(--muted);margin-bottom:8px}
+.rk2-card-view td:last-child{margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+.rk2-card-view .row-actions{justify-content:flex-start}
+.rk2-card-view .row-actions button{flex:1;min-height:40px}
+.rk2-card-view tr:not(.rk2-service-row){grid-column:1/-1}
+.action-grid strong,.status-row strong,.titem b{font-size:14px}
+.action-grid small,.status-row span,.titem span,.task-row span,.feedback-strip span,.continuity-strip span{font-size:12px}
+.action-grid button{min-height:72px}
+.card-title h3{font-size:16px}
+.ops-command p{font-size:13px}.ops-statusline span,.decision-meta span{font-size:11px}
+.decision-card p,.integration p,.integration .meta{font-size:13px}
+.demo-banner b{font-size:15px}.demo-banner span{font-size:13px;display:block}
+.demo-banner{flex-wrap:wrap}.demo-banner .steps{margin-left:auto}
+.rk2-hero .hero-search input{width:0}
+.large-text .quick-card strong,.large-text .data-table td,.large-text .action-grid strong{font-size:17px}
+.high-contrast .rk2-hero{background:#002e22}
+.high-contrast .rk2-resource-grid a,.high-contrast .rk2-card-view tr{border:2px solid #555}
+@media(max-width:960px){.rk2-card-view tbody{grid-template-columns:repeat(2,minmax(0,1fr))}.rk2-officer-nav{margin-left:0}.rk2-officer-links{left:auto;right:0}.hero-side{display:block}.rk2-hero .hero-inner{grid-template-columns:1fr}.brand-copy strong{font-size:16px}}
+@media(max-width:720px){.mainnav-inner{gap:2px;padding:5px 8px}.navbtn{padding:8px;font-size:12px;min-height:40px}.navbtn span{display:inline}.navbtn.emph{margin-left:0}.nav-spacer{display:none}.rk2-officer-nav summary{font-size:12px;padding:8px;min-height:40px}.rk2-officer-links{left:0;right:auto;min-width:200px}.rk2-card-view tbody{grid-template-columns:1fr}.rk2-hero .hero-search{flex-wrap:nowrap}.rk2-hero .hero-search input{flex-basis:0}.rk2-hero .profile-mini{padding:12px}.mast-inner{flex-wrap:wrap;gap:8px}.sso-chip{display:flex;min-width:0;padding:6px;font-size:11px}.demo-banner .steps{margin-left:0}.assistant-panel{max-height:calc(100dvh - 100px)}.searchbox{max-width:100%}.searchbox input{min-width:0;width:100%}.ops-command h2{font-size:22px}}
