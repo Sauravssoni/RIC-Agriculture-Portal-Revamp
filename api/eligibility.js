@@ -8,16 +8,18 @@ const RULE = {
 module.exports = (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ error: 'METHOD_NOT_ALLOWED' });
   const body = req.body || {};
-  const district = String(body.district || 'Jaipur');
-  const landholdingHa = Number(body.landholdingHa || 1.5);
-  const farmerRegistryLinked = body.farmerRegistryLinked !== false;
+  const district = typeof body.district === 'string' ? body.district : '';
+  const landholdingHa = typeof body.landholdingHa === 'number' ? body.landholdingHa : NaN;
+  const farmerRegistryLinked = body.farmerRegistryLinked === true;
+  const schemeId = typeof body.schemeId === 'string' ? body.schemeId : RULE.schemeId;
+  if (schemeId !== RULE.schemeId) return res.status(200).json({ ...RULE, schemeId, result: 'NEEDS_REVIEW', checks: [{ id: 'rule_available', passed: false }], statutoryDecision: false, receipt: `RKO-DEMO-${Date.now().toString(36).toUpperCase()}`, message: 'No configured demonstration rule for this service. Verify official criteria.' });
   const checks = [
-    ['rajasthan_context', true],
+    ['rajasthan_context', ['Jaipur','Jodhpur','Udaipur','Barmer','Banswara'].includes(district)],
     ['eligible_district_demo_rule', ['Jaipur','Jodhpur','Udaipur'].includes(district)],
     ['landholding_demo_rule', Number.isFinite(landholdingHa) && landholdingHa > 0 && landholdingHa <= 10],
     ['farmer_registry_linked', farmerRegistryLinked],
     ['service_window_demo_rule', true],
-    ['minimum_required_attributes_present', true]
+    ['minimum_required_attributes_present', Boolean(district) && Number.isFinite(landholdingHa) && typeof body.farmerRegistryLinked === 'boolean']
   ].map(([id, passed]) => ({ id, passed }));
   const potentiallyEligible = checks.every(x => x.passed);
   const receipt = `RKO-DEMO-${Date.now().toString(36).toUpperCase()}`;
