@@ -17,3 +17,30 @@
 .hero-badges{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .prototype-pill{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.34);background:rgba(255,255,255,.12);color:#fff;border-radius:999px;padding:6px 10px;font-size:10px;font-weight:800;letter-spacing:.07em}
 @media(max-width:760px){.mvp-mark{display:inline-block;margin:3px 0 0}.hero-badges{gap:6px}}
+
+/* RajKisan One 2.0: citizen-facing hierarchy, restrained government palette, responsive touch targets. */
+.rk2-hero{background:#163e35;border-radius:20px;box-shadow:0 16px 38px #233c3022;border:1px solid #1b4b40}
+.rk2-hero:after{border-color:#f4d99a13}
+.rk2-hero .hero-inner{grid-template-columns:minmax(0,1.55fr) minmax(250px,.65fr);gap:24px;padding:32px}
+.rk2-hero h1{font-size:clamp(27px,4vw,43px);letter-spacing:-.035em;line-height:1.1;max-width:650px}
+.rk2-hero p{color:#eef6e9;line-height:1.6;max-width:610px}
+.rk2-hero .hero-search{box-shadow:none;border:1px solid #b8c9be;border-radius:12px}
+.rk2-hero .hero-btn{background:#163e35;border-color:#163e35}
+.rk2-hero .voice-btn{background:#eaf1e9;color:#163e35;min-width:44px}
+.rk2-hero .profile-mini{background:#f7f3e6;color:#193b32;border:1px solid #dfd9c5;padding:18px;backdrop-filter:none}
+.rk2-hero .profile-mini small,.rk2-hero .mini-grid span{color:#435c51}
+.rk2-hero .mini-grid div{background:#e9ebdf}
+.rk2-hero .avatar{background:#dce9d9;color:#193b32}
+.rk2-directory{margin-top:18px}
+.rk2-directory .section-head{margin:0 0 14px}
+.rk2-resource-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.rk2-resource-grid a{display:flex;flex-direction:column;gap:7px;text-decoration:none;color:var(--ink);padding:16px;min-width:0;border:1px solid var(--line);border-radius:12px;background:#f8faf7;transition:background .15s,border-color .15s}
+.rk2-resource-grid a:hover,.rk2-resource-grid a:focus-visible{background:#edf4e9;border-color:#89a894}
+.rk2-resource-grid a strong{font-size:15px;color:#164638}.rk2-resource-grid a span{font-size:13px;color:var(--muted)}.rk2-resource-grid a small{font-size:11px;color:#53695d}
+.quick-card{min-height:126px;padding:16px;box-shadow:none}.quick-card strong{font-size:14px}.quick-card span{font-size:12px;line-height:1.4}
+.quick-card:hover,.quick-card:focus-visible{border-color:#81a191;box-shadow:0 6px 14px #1a3b2d13;transform:translateY(-2px)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #c88a2c;outline-offset:3px}
+.hero-search:focus-within{outline:3px solid #e1bc71;outline-offset:3px}
+@media(max-width:960px){.rk2-hero .hero-inner{grid-template-columns:1fr}.rk2-resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.rk2-hero .hero-inner{padding:20px;gap:18px}.rk2-hero .hero-search{padding:5px}.rk2-hero .hero-search input{font-size:14px;padding:10px 8px}.rk2-hero .hero-btn{padding:9px}.rk2-resource-grid{grid-template-columns:1fr}.quick-card{min-height:108px;padding:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
